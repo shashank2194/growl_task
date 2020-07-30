@@ -2,7 +2,7 @@
 
 ### Clone this repo and run it:
 ```bash
-git clone git@bitbucket.org:jadenteam/growl-task.git && cd growl-task && yarn && yarn start
+git clone git@github.com:asiraky/growl-task.git && cd growl-task && yarn && yarn start
 ```
 
 There are 3 steps to this task:
