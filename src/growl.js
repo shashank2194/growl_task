@@ -2,25 +2,12 @@ import React from 'react'
 
 import './growl.css'
 
-export const Growl = ({ active, message, onDismissed }) => {
-    const [state, setState] = React.useState(true)
-
-    React.useEffect(() => {
-        setState(true)
-    }, [active])
-
-    const handleClick = () => {
-        setState(false)
-        onDismissed()
-    }
-
-    return (
-        <div className={`growl${active && state ? ' active' : ''}`}>
-            {message}
-            <div onClick={handleClick} className="growl-close"></div>
-        </div>
-    )
-}
+export const Growl = ({ active, message, onDismissed }) => (
+  <div className={`growl${active ? " active" : ""}`}>
+    {message}
+    <div onClick={onDismissed} className="growl-close" />
+  </div>
+)
 
 export function useGrowl() {
     // state of the growl
