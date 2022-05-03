@@ -2,6 +2,7 @@ import React from 'react'
 
 import './growl.css'
 
+
 export const Growl = ({ active, message, onDismissed }) => (
   <div className={`growl${active ? " active" : ""}`}>
     {message}
@@ -20,6 +21,13 @@ export function useGrowl() {
         // the second arg is a fn that allows you to safely set its state
         (active) => {
             setGrowlActive(active)
+
+            //If activated then hide after 3 seconds
+            if(active){
+              setTimeout(function () {
+                setGrowlActive(false);
+              }, 3000);
+            }
         },
     ]
 }
